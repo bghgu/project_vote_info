@@ -6,10 +6,8 @@ const db = require('../module/pool.js');
 
 //모든 투표 리스트
 router.get('/', async(req, res, next) => {
-    let query = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target'
-    + 'from VOTE v join DEPARTMENT d on v.target = d.departmentId';
+    const query = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target from VOTE v join DEPARTMENT d on v.target = d.departmentId';
     let data = await db.execute(query);
-    console.log(data);
     if(data.length != 0) {
         res.status(200).send({
             message : "SUCCESS",
@@ -25,8 +23,8 @@ router.get('/', async(req, res, next) => {
 //투표 세부 정보
 router.post('/', async(req, res, next) => {
     let id = req.body.id;
-    let query1 = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target, (select count(*) from USER where floor(departmentId/10)*10 = floor(d.departmentId/10)*10) as allVoteCount from VOTE v join DEPARTMENT d on v.target = d.departmentId where v.voteId = ?';
-    let query2 = 'select * from CANDIDATE where voteId = ?'
+    const query1 = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target, (select count(*) from USER where floor(departmentId/10)*10 = floor(d.departmentId/10)*10) as allVoteCount from VOTE v join DEPARTMENT d on v.target = d.departmentId where v.voteId = ?';
+    const query2 = 'select * from CANDIDATE where voteId = ?'
     let data = await db.execute(query1, id);
     let list = await db.execute(query2, id);
     data[0].candidateList = list;

@@ -7,7 +7,8 @@ const db = require('../module/pool.js');
 //선거권 확인
 router.post('/', async (req, res, next) => {
     let id = req.body.id;
-    let data = await db.execute('select * from USER where id = ?', id);
+    const query = 'select * from USER where id = ?';
+    let data = await db.execute(query, id);
     if(data.length == 1) {
         if(data[0].check == 1) {
             res.status(200).send({
