@@ -4,8 +4,8 @@
 
 ### 선거 정보
 
-#### url
-
+#### url : bghgu.tk/info
+#### api : https://github.com/bghgu/project_vote_info/wiki
 ---
 ### 실행
 

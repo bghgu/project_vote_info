@@ -27,7 +27,6 @@ router.post('/', async(req, res, next) => {
     const query2 = 'select * from CANDIDATE where voteId = ?'
     let data = await db.execute(query1, id);
     let list = await db.execute(query2, id);
-    data[0].candidateList = list;
     if(data.length != 0) {
         res.status(200).send({
             message : "SUCCESS",
