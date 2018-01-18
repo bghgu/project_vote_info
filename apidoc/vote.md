@@ -72,36 +72,28 @@ Content-Type: application/json
 ```json
 {
     "message": "SUCCESS",
-    "data": {
-        "voteId": 3,
-        "voteName": "소프트웨어공학전공대표 투표",
-        "startTime": "2017-12-31T15:00:00.000Z",
-        "endTime": "2018-01-30T15:00:00.000Z",
-        "target": "IT융합자율학부 소프트웨어공학전공",
-        "allVoteCount": 2,
-        "candidateList": [
-            {
-                "candidateId": 5,
-                "name": "학생5",
-                "departmentName": "소프트웨어공학과",
-                "position": "전공대표",
-                "campName": null,
-                "photo": null,
-                "voteCount": null,
-                "voteId": 3
-            },
-            {
-                "candidateId": 6,
-                "name": "학생6",
-                "departmentName": "소프트웨어공학과",
-                "position": "전공대표",
-                "campName": null,
-                "photo": null,
-                "voteCount": null,
-                "voteId": 3
-            }
-        ]
-    }
+    "data": [
+        {
+            "candidateId": 5,
+            "name": "학생5",
+            "departmentName": "소프트웨어공학과",
+            "position": "전공대표",
+            "campName": null,
+            "photo": null,
+            "voteCount": null,
+            "voteId": 3
+        },
+        {
+            "candidateId": 6,
+            "name": "학생6",
+            "departmentName": "소프트웨어공학과",
+            "position": "전공대표",
+            "campName": null,
+            "photo": null,
+            "voteCount": null,
+            "voteId": 3
+        }
+    ]
 }
  ```
 #### 투표 세부 정보 없음

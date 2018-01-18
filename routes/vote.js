@@ -23,14 +23,13 @@ router.get('/', async(req, res, next) => {
 //투표 세부 정보
 router.post('/', async(req, res, next) => {
     let id = req.body.id;
-    const query1 = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target, (select count(*) from USER where floor(departmentId/10)*10 = floor(d.departmentId/10)*10) as allVoteCount from VOTE v join DEPARTMENT d on v.target = d.departmentId where v.voteId = ?';
+    //const query1 = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target, (select count(*) from USER where floor(departmentId/10)*10 = floor(d.departmentId/10)*10) as allVoteCount from VOTE v join DEPARTMENT d on v.target = d.departmentId where v.voteId = ?';
     const query2 = 'select * from CANDIDATE where voteId = ?'
-    let data = await db.execute(query1, id);
     let list = await db.execute(query2, id);
-    if(data.length != 0) {
+    if(list.length != 0) {
         res.status(200).send({
             message : "SUCCESS",
-            data : data[0]
+            data : list
         });
     }else {
         res.status(200).send({
