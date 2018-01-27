@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const async = require('async');
 const jwt = require('../module/jwt.js');
 const db = require('../module/pool.js');
 
@@ -10,7 +9,7 @@ router.post('/', async (req, res, next) => {
     const query = 'select * from USER where id = ?';
     let data = await db.execute(query, id);
     if(data.length == 1) {
-        if(data[0].check == 1) {
+        if(data[0].voteCheck == 1) {
             res.status(200).send({
                 message : "투표를 했습니다."
             });
