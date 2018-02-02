@@ -10,36 +10,48 @@ GET | / | 모든 투표 목록
 #### 투표 리스트 반환 성공
 ```json
 {
-    "message": "SUCCESS",
+    "status": "SUCCESS",
     "data": [
         {
             "voteId": 1,
-            "voteName": "총학생회장 투표",
-            "startTime": "2017-12-31T15:00:00.000Z",
-            "endTime": "2018-01-30T15:00:00.000Z",
-            "target": "전체"
+            "voteName": "총학생회선거",
+            "startTime": "2018-01-01T00:00:00.000Z",
+            "endTime": "2018-01-31T09:00:00.000Z",
+            "target": 1,
+            "allVoter": 7,
+            "valuedVoter": 1,
+            "vetePercent": "14.29"
         },
         {
             "voteId": 2,
-            "voteName": "IT학부회장 투표",
-            "startTime": "2017-12-31T15:00:00.000Z",
-            "endTime": "2018-01-30T15:00:00.000Z",
-            "target": "IT융합자율학부"
+            "voteName": "IT학부선거",
+            "startTime": "2018-01-01T00:00:00.000Z",
+            "endTime": "2018-01-31T09:00:00.000Z",
+            "target": 40,
+            "allVoter": 5,
+            "valuedVoter": 1,
+            "vetePercent": "20.00"
         },
         {
             "voteId": 3,
-            "voteName": "소프트웨어공학전공대표 투표",
-            "startTime": "2017-12-31T15:00:00.000Z",
-            "endTime": "2018-01-30T15:00:00.000Z",
-            "target": "IT융합자율학부 소프트웨어공학전공"
+            "voteName": "소프트웨어공학전공선거",
+            "startTime": "2018-01-01T00:00:00.000Z",
+            "endTime": "2018-01-31T09:00:00.000Z",
+            "target": 42,
+            "allVoter": 3,
+            "valuedVoter": 1,
+            "vetePercent": "33.33"
         }
-    ]
+    ],
+    "msg": "모든 투표 리스트 및 투표율"
 }
 ```
 #### 투표 리스트 반환 실패
 ```json
 {
-    "message": "FAIL"
+    "status": "FAIL",
+    "data": null
+    "msg": "모든 투표 리스트 조회 실패"
 }
 ```
 ---
