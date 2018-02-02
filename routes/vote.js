@@ -43,7 +43,7 @@ router.get('/', async(req, res, next) => {
             }
             data[i].allVoter = all[0].count;
             data[i].valuedVoter = valued[0].count;
-            data[i].vetePercent = ((valued[0].count/all[0].count)*100).toFixed(2); + "%";
+            data[i].votePercent = ((valued[0].count/all[0].count)*100).toFixed(2); + "%";
         }
         res.status(200).send({
             status : "SUCCESS",
