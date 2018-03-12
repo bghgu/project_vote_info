@@ -6,7 +6,7 @@ const db = require('../module/pool.js');
 //선거권 확인
 router.post('/', async (req, res, next) => {
     let id = req.body.id;
-    const query = 'select * from USER where id = ?';
+    const query = 'select * from AUTH where authCode = ?';
     let data = await db.execute(query, id);
     if(data.length == 1) {
         if(data[0].voteCheck == 1) {
@@ -20,7 +20,7 @@ router.post('/', async (req, res, next) => {
         }
     }else {
         res.status(200).send({
-            message : "등록된 학생이 아닙니다."
+            message : "등록된 선거 코드가 아닙니다."
         });
     }
 });

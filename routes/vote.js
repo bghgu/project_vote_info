@@ -5,7 +5,6 @@ const db = require('../module/pool.js');
 
 //모든 투표 리스트
 router.get('/', async(req, res, next) => {
-    
     const query = 'select v.voteId, v.voteName, v.startTime, v.endTime, d.departmentName as target, v.target from VOTEINFO v join DEPARTMENT d on v.target = d.departmentId';
     let query2 = '';
     let query3 = '';
