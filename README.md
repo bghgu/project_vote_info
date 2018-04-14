@@ -1,6 +1,6 @@
 # project_vote_info
 
-####당신의 회장에게 투표하세요
+**당신의 회장에게 투표하세요**
 
 블록체인을 이용한 전자 투표 시스템 
 
@@ -12,13 +12,31 @@
 
 맡은 역할 : PM, DB 설계, 투표 정보 조회 시스템 개발, 투표 시스템 개발
 
+[투표 시스템 작품제안서](https://github.com/bghgu/project_vote_info/blob/master/%ED%88%AC%ED%91%9C%20%EC%8B%9C%EC%8A%A4%ED%85%9C_%EC%9E%91%ED%92%88%EC%A0%9C%EC%95%88%EC%84%9C.pdf) - 작품 제안서
+
+사용 기술 : Node.js, Express.js, MyBatis, AWS
+
 API : https://github.com/bghgu/project_vote_info/wiki
+
+![db.png](https://github.com/bghgu/project_vote_info/blob/master/image/db.png)
 
 ERD 다이어그램
 
 ## 구성
 
+![1.png](https://github.com/bghgu/project_vote_info/blob/master/image/1.png)
 
+* 전체 시스템 구성도
+
+![2.png](https://github.com/bghgu/project_vote_info/blob/master/image/2.png)
+
+* 선거 정보 조회 시스템 구성도
+* 기능
+  * 선거 정보 조회 - 선거 이름, 투표 대상(학과), 투표 시간, 후보자 정보
+  * 실시간 투표율 확인
+  * 나의 선거권 조회
+  * 나의 선거 완료 여부 확인(블록 체인 검사)
+  * 투표 결과
 
 ## 시작하기
 
